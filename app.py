@@ -64,3 +64,21 @@
 #     if(great_number == -1):
 #         break
 #     print_smaller_numbers(random_list, great_number)
+
+# Exercise 4:
+# Create a program that asks the user for a number and then prints out a list of all the divisors of that number.
+
+def get_divisors(num_input):
+    list_of_divisors = [i for i in range(
+        1, num_input + 1) if num_input % i == 0]
+    # for i in range(1, num_input + 1):
+    #     if num_input % i == 0:
+    #         list_of_divisors.append(i)
+    return list_of_divisors
+
+
+while True:
+    num_input = int(input("Enter a number: (-1 to exit)\n"))
+    if(num_input == -1):
+        break
+    print(get_divisors(num_input))
