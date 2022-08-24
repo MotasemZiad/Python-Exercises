@@ -68,17 +68,51 @@
 # Exercise 4:
 # Create a program that asks the user for a number and then prints out a list of all the divisors of that number.
 
-def get_divisors(num_input):
-    list_of_divisors = [i for i in range(
-        1, num_input + 1) if num_input % i == 0]
-    # for i in range(1, num_input + 1):
-    #     if num_input % i == 0:
-    #         list_of_divisors.append(i)
-    return list_of_divisors
+# def get_divisors(num_input):
+#     list_of_divisors = [i for i in range(
+#         1, num_input + 1) if num_input % i == 0]
+#     # for i in range(1, num_input + 1):
+#     #     if num_input % i == 0:
+#     #         list_of_divisors.append(i)
+#     return list_of_divisors
 
 
-while True:
-    num_input = int(input("Enter a number: (-1 to exit)\n"))
-    if(num_input == -1):
-        break
-    print(get_divisors(num_input))
+# while True:
+#     num_input = int(input("Enter a number: (-1 to exit)\n"))
+#     if(num_input == -1):
+#         break
+#     print(get_divisors(num_input))
+
+# Exercise 5:
+# Take two lists, say for example these two:
+
+#   a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+#   b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# and write a program that returns a list that contains only the elements that are common between the lists (without duplicates). Make sure your program works on two lists of different sizes.
+
+# Extras:
+# Randomly generate two lists to test this
+# Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)
+
+import random
+
+
+def find_common(list1, list2):
+    return list(set([i for i in list1 for j in list2 if i == j]))
+    # list_common = set()
+    # for i in list1:
+    #     for j in list2:
+    #         if(i == j):
+    #             list_common.add(i)
+    # return list(list_common)
+
+
+a = []
+b = []
+
+
+for i in range(20):
+    a.append(random.randint(0, 100))
+    b.append(random.randint(0, 100))
+
+print(find_common(a, b))
