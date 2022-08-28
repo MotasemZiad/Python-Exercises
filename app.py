@@ -94,25 +94,46 @@
 # Randomly generate two lists to test this
 # Write this in one line of Python (don’t worry if you can’t figure this out at this point - we’ll get to it soon)
 
-import random
+# import random
 
 
-def find_common(list1, list2):
-    return list(set([i for i in list1 for j in list2 if i == j]))
-    # list_common = set()
-    # for i in list1:
-    #     for j in list2:
-    #         if(i == j):
-    #             list_common.add(i)
-    # return list(list_common)
+# def find_common(list1, list2):
+#     return list(set([i for i in list1 for j in list2 if i == j]))
+#     # list_common = set()
+#     # for i in list1:
+#     #     for j in list2:
+#     #         if(i == j):
+#     #             list_common.add(i)
+#     # return list(list_common)
 
 
-a = []
-b = []
+# a = []
+# b = []
 
 
-for i in range(20):
-    a.append(random.randint(0, 100))
-    b.append(random.randint(0, 100))
+# for i in range(20):
+#     a.append(random.randint(0, 100))
+#     b.append(random.randint(0, 100))
 
-print(find_common(a, b))
+# print(find_common(a, b))
+
+# Exercise 6:
+# Ask the user for a string and print out whether this string is a palindrome or not.
+# (A palindrome is a string that reads the same forwards and backwards.)
+
+def is_palindrome(sentence):
+    lower_case_sentence = sentence.lower()
+    reversed_sentence = lower_case_sentence[::-1]
+    if(lower_case_sentence == reversed_sentence):
+        return True
+    return False
+
+
+while True:
+    str_input = input("Enter a word:\n")
+    if(str_input == "exit"):
+        break
+    if(is_palindrome(str_input)):
+        print("This is a palindrome")
+    else:
+        print("This is NOT a palindrome")
