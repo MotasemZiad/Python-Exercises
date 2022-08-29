@@ -121,19 +121,29 @@
 # Ask the user for a string and print out whether this string is a palindrome or not.
 # (A palindrome is a string that reads the same forwards and backwards.)
 
-def is_palindrome(sentence):
-    lower_case_sentence = sentence.lower()
-    reversed_sentence = lower_case_sentence[::-1]
-    if(lower_case_sentence == reversed_sentence):
-        return True
-    return False
+# def is_palindrome(sentence):
+#     lower_case_sentence = sentence.lower()
+#     reversed_sentence = lower_case_sentence[::-1]
+#     if(lower_case_sentence == reversed_sentence):
+#         return True
+#     return False
 
 
-while True:
-    str_input = input("Enter a word:\n")
-    if(str_input == "exit"):
-        break
-    if(is_palindrome(str_input)):
-        print("This is a palindrome")
-    else:
-        print("This is NOT a palindrome")
+# while True:
+#     str_input = input("Enter a word:\n")
+#     if(str_input == "exit"):
+#         break
+#     if(is_palindrome(str_input)):
+#         print("This is a palindrome")
+#     else:
+#         print("This is NOT a palindrome")
+
+# Exercise 7:
+# Let’s say I give you a list saved in a variable: a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
+# Write one line of Python that takes this list a and makes a new list that has only the even elements of this list in it.
+
+def get_even_numbers(list_input):
+    return [i for i in list_input if i % 2 == 0]
+
+
+print(get_even_numbers([1, 4, 9, 16, 25, 36, 49, 64, 81, 100]))
