@@ -142,8 +142,34 @@
 # Let’s say I give you a list saved in a variable: a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
 # Write one line of Python that takes this list a and makes a new list that has only the even elements of this list in it.
 
-def get_even_numbers(list_input):
-    return [i for i in list_input if i % 2 == 0]
+# def get_even_numbers(list_input):
+#     return [i for i in list_input if i % 2 == 0]
 
 
-print(get_even_numbers([1, 4, 9, 16, 25, 36, 49, 64, 81, 100]))
+# print(get_even_numbers([1, 4, 9, 16, 25, 36, 49, 64, 81, 100]))
+
+# Exercise 8:
+# Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them,
+# print out a message of congratulations to the winner, and ask if the players want to start a new game)
+
+print("Rock Paper Scissors Game\t (Enter exit to end the game)")
+first_player_score = 0
+second_player_score = 0
+while True:
+    first_player_choice = input("Player 1: Enter your choice:\n")
+    if(first_player_choice.lower() == "exit"):
+        print(
+            f"Final Score: Player 1: {first_player_score} VS. Player 2: {second_player_score}")
+        break
+    second_player_choice = input("Player 2: Enter your choice:\n")
+
+    if (first_player_choice.lower() == "rock" and second_player_choice.lower() == "scissors") or (first_player_choice.lower() == "scissors" and second_player_choice.lower() == "paper") or (first_player_choice.lower() == "paper" and second_player_choice.lower() == "rock"):
+        first_player_score += 1
+        print("Player 1 win")
+    elif (second_player_choice.lower() == "rock" and first_player_choice.lower() == "scissors") or (second_player_choice.lower() == "scissors" and first_player_choice.lower() == "paper") or (second_player_choice.lower() == "paper" and first_player_choice.lower() == "rock"):
+        second_player_score += 1
+        print("Player 2 win")
+    elif first_player_choice.lower() == second_player_choice.lower():
+        print("Draw!")
+    else:
+        print("Enter rock, paper, or scissors!")
