@@ -152,24 +152,58 @@
 # Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them,
 # print out a message of congratulations to the winner, and ask if the players want to start a new game)
 
-print("Rock Paper Scissors Game\t (Enter exit to end the game)")
-first_player_score = 0
-second_player_score = 0
-while True:
-    first_player_choice = input("Player 1: Enter your choice:\n")
-    if(first_player_choice.lower() == "exit"):
-        print(
-            f"Final Score: Player 1: {first_player_score} VS. Player 2: {second_player_score}")
-        break
-    second_player_choice = input("Player 2: Enter your choice:\n")
+# print("Rock Paper Scissors Game\t (Enter exit to end the game)")
+# first_player_score = 0
+# second_player_score = 0
+# while True:
+#     first_player_choice = input("Player 1: Enter your choice:\n")
+#     if(first_player_choice.lower() == "exit"):
+#         print(
+#             f"Final Score: Player 1: {first_player_score} VS. Player 2: {second_player_score}")
+#         break
+#     second_player_choice = input("Player 2: Enter your choice:\n")
 
-    if (first_player_choice.lower() == "rock" and second_player_choice.lower() == "scissors") or (first_player_choice.lower() == "scissors" and second_player_choice.lower() == "paper") or (first_player_choice.lower() == "paper" and second_player_choice.lower() == "rock"):
-        first_player_score += 1
-        print("Player 1 win")
-    elif (second_player_choice.lower() == "rock" and first_player_choice.lower() == "scissors") or (second_player_choice.lower() == "scissors" and first_player_choice.lower() == "paper") or (second_player_choice.lower() == "paper" and first_player_choice.lower() == "rock"):
-        second_player_score += 1
-        print("Player 2 win")
-    elif first_player_choice.lower() == second_player_choice.lower():
-        print("Draw!")
+#     if (first_player_choice.lower() == "rock" and second_player_choice.lower() == "scissors") or (first_player_choice.lower() == "scissors" and second_player_choice.lower() == "paper") or (first_player_choice.lower() == "paper" and second_player_choice.lower() == "rock"):
+#         first_player_score += 1
+#         print("Player 1 win")
+#     elif (second_player_choice.lower() == "rock" and first_player_choice.lower() == "scissors") or (second_player_choice.lower() == "scissors" and first_player_choice.lower() == "paper") or (second_player_choice.lower() == "paper" and first_player_choice.lower() == "rock"):
+#         second_player_score += 1
+#         print("Player 2 win")
+#     elif first_player_choice.lower() == second_player_choice.lower():
+#         print("Draw!")
+#     else:
+#         print("Enter rock, paper, or scissors!")
+
+# Exercise 9:
+
+# Generate a random number between 1 and 9 (including 1 and 9).
+# Ask the user to guess the number, then tell them whether they guessed too low, too high, or exactly right.
+
+# Extras:
+
+# Keep the game going until the user types “exit”
+# Keep track of how many guesses the user has taken, and when the game ends, print this out.
+
+import random
+
+tries = 0
+print("Guessing Game\nWe are generating a number between 1 to 9:")
+generated_number = random.randint(1, 9)
+
+while True:
+    user_input = input("Try to guess the number: (type exit to end)\n")
+
+    if user_input == 'exit':
+        break
+
+    tries += 1
+    if int(user_input) < 1 or int(user_input) > 9:
+        print("Invalid input, please enter a number between 1 and 9")
     else:
-        print("Enter rock, paper, or scissors!")
+        if int(user_input) == generated_number:
+            print(f"Your guess is right, You took {tries} tries to get it!")
+            break
+        elif int(user_input) > generated_number:
+            print("Your guess is greater than the right one.")
+        elif int(user_input) < generated_number:
+            print("Your guess is less than the right one.")
