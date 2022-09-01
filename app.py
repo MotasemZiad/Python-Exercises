@@ -184,26 +184,49 @@
 # Keep the game going until the user types “exit”
 # Keep track of how many guesses the user has taken, and when the game ends, print this out.
 
+# import random
+
+# tries = 0
+# print("Guessing Game\nWe are generating a number between 1 to 9:")
+# generated_number = random.randint(1, 9)
+
+# while True:
+#     user_input = input("Try to guess the number: (type exit to end)\n")
+
+#     if user_input == 'exit':
+#         break
+
+#     tries += 1
+#     if int(user_input) < 1 or int(user_input) > 9:
+#         print("Invalid input, please enter a number between 1 and 9")
+#     else:
+#         if int(user_input) == generated_number:
+#             print(f"Your guess is right, You took {tries} tries to get it!")
+#             break
+#         elif int(user_input) > generated_number:
+#             print("Your guess is greater than the right one.")
+#         elif int(user_input) < generated_number:
+#             print("Your guess is less than the right one.")
+
+# Exercise 10:
+# write a program that returns a list that contains only the elements that are common between the lists (without duplicates).
+# Make sure your program works on two lists of different sizes.
+
+# Extras:
+# Randomly generate two lists to test this
 import random
 
-tries = 0
-print("Guessing Game\nWe are generating a number between 1 to 9:")
-generated_number = random.randint(1, 9)
 
-while True:
-    user_input = input("Try to guess the number: (type exit to end)\n")
+def find_in_common(list1, list2):
+    return list(set([i for i in list1 if i in list2]))
+    # return list(set([i for i in list1 for j in list2 if i == j]))
 
-    if user_input == 'exit':
-        break
 
-    tries += 1
-    if int(user_input) < 1 or int(user_input) > 9:
-        print("Invalid input, please enter a number between 1 and 9")
-    else:
-        if int(user_input) == generated_number:
-            print(f"Your guess is right, You took {tries} tries to get it!")
-            break
-        elif int(user_input) > generated_number:
-            print("Your guess is greater than the right one.")
-        elif int(user_input) < generated_number:
-            print("Your guess is less than the right one.")
+first_list = random.sample(range(0, 100), k=random.randint(1, 20))
+second_list = random.sample(range(0, 100), k=random.randint(1, 20))
+
+print(first_list)
+print(second_list)
+
+print("Element in common with two generated lists:",
+      find_in_common(first_list, second_list))
