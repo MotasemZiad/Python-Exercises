@@ -214,19 +214,45 @@
 
 # Extras:
 # Randomly generate two lists to test this
-import random
+# import random
 
 
-def find_in_common(list1, list2):
-    return list(set([i for i in list1 if i in list2]))
-    # return list(set([i for i in list1 for j in list2 if i == j]))
+# def find_in_common(list1, list2):
+#     return list(set([i for i in list1 if i in list2]))
+#     # return list(set([i for i in list1 for j in list2 if i == j]))
 
 
-first_list = random.sample(range(0, 100), k=random.randint(1, 20))
-second_list = random.sample(range(0, 100), k=random.randint(1, 20))
+# first_list = random.sample(range(0, 100), k=random.randint(1, 20))
+# second_list = random.sample(range(0, 100), k=random.randint(1, 20))
 
-print(first_list)
-print(second_list)
+# print(first_list)
+# print(second_list)
 
-print("Element in common with two generated lists:",
-      find_in_common(first_list, second_list))
+# print("Element in common with two generated lists:",
+#       find_in_common(first_list, second_list))
+
+# Exercise 11:
+# Ask the user for a number and determine whether the number is prime or not.
+
+def is_prime(num):
+    divisors = []
+
+    for i in range(1, num + 1):
+        if num % i == 0:
+            divisors.append(i)
+
+    if len(divisors) == 2:
+        return True
+    return False
+
+
+while True:
+    num_input = int(input("Enter a number: (-1 to exit)\n"))
+
+    if num_input == -1:
+        break
+
+    if is_prime(num_input):
+        print(f"The number {num_input} is prime.")
+    else:
+        print(f"The number {num_input} is NOT prime.")
