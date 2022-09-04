@@ -234,25 +234,33 @@
 # Exercise 11:
 # Ask the user for a number and determine whether the number is prime or not.
 
-def is_prime(num):
-    divisors = []
+# def is_prime(num):
+#     divisors = [i for i in range(1, num + 1) if num % i == 0]
 
-    for i in range(1, num + 1):
-        if num % i == 0:
-            divisors.append(i)
-
-    if len(divisors) == 2:
-        return True
-    return False
+#     if len(divisors) == 2:
+#         return True
+#     return False
 
 
-while True:
-    num_input = int(input("Enter a number: (-1 to exit)\n"))
+# while True:
+#     num_input = int(input("Enter a number: (-1 to exit)\n"))
 
-    if num_input == -1:
-        break
+#     if num_input == -1:
+#         break
 
-    if is_prime(num_input):
-        print(f"The number {num_input} is prime.")
-    else:
-        print(f"The number {num_input} is NOT prime.")
+#     if is_prime(num_input):
+#         print(f"The number {num_input} is prime.")
+#     else:
+#         print(f"The number {num_input} is NOT prime.")
+
+# Exercise 12:
+# Write a program that takes a list of numbers (for example, a = [5, 10, 15, 20, 25])
+# and makes a new list of only the first and last elements of the given list.
+
+def get_first_last(list_of_numbers):
+    return [list_of_numbers[0], list_of_numbers[-1]]
+
+
+a = [5, 10, 15, 20, 25, 57]
+
+print(get_first_last(a))
