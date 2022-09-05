@@ -257,10 +257,32 @@
 # Write a program that takes a list of numbers (for example, a = [5, 10, 15, 20, 25])
 # and makes a new list of only the first and last elements of the given list.
 
-def get_first_last(list_of_numbers):
-    return [list_of_numbers[0], list_of_numbers[-1]]
+# def get_first_last(list_of_numbers):
+#     return [list_of_numbers[0], list_of_numbers[-1]]
 
 
-a = [5, 10, 15, 20, 25, 57]
+# a = [5, 10, 15, 20, 25, 57]
 
-print(get_first_last(a))
+# print(get_first_last(a))
+
+# Exercise 13:
+# Write a program that asks the user how many Fibonnaci numbers to generate and then generates them.
+# Take this opportunity to think about how you can use functions.
+# Make sure to ask the user to enter the number of numbers in the sequence to generate.
+
+def fibonacci(num_of_numbers):
+    fibonacci_list = [1, 1]
+    for i in range(1, num_of_numbers - 1):
+        fibonacci_list.append(fibonacci_list[-1] + fibonacci_list[-2])
+
+    return fibonacci_list
+
+
+while True:
+    num_input = int(
+        input("How many fibonacci numbers you want to generate? (-1 to exit)\n"))
+
+    if num_input == -1:
+        break
+
+    print("The fibonacci list is: ", fibonacci(num_input))
