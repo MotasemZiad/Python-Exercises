@@ -270,19 +270,45 @@
 # Take this opportunity to think about how you can use functions.
 # Make sure to ask the user to enter the number of numbers in the sequence to generate.
 
-def fibonacci(num_of_numbers):
-    fibonacci_list = [1, 1]
-    for i in range(1, num_of_numbers - 1):
-        fibonacci_list.append(fibonacci_list[-1] + fibonacci_list[-2])
+# def fibonacci(num_of_numbers):
+#     fibonacci_list = [1, 1]
+#     for i in range(1, num_of_numbers - 1):
+#         fibonacci_list.append(fibonacci_list[-1] + fibonacci_list[-2])
 
-    return fibonacci_list
+#     return fibonacci_list
 
 
-while True:
-    num_input = int(
-        input("How many fibonacci numbers you want to generate? (-1 to exit)\n"))
+# while True:
+#     num_input = int(
+#         input("How many fibonacci numbers you want to generate? (-1 to exit)\n"))
 
-    if num_input == -1:
-        break
+#     if num_input == -1:
+#         break
 
-    print("The fibonacci list is: ", fibonacci(num_input))
+#     print("The fibonacci list is: ", fibonacci(num_input))
+
+# Exercise 14:
+# Write a program (function!) that takes a list and returns a new list that contains
+# all the elements of the first list minus all the duplicates.
+
+# Extras:
+# 1. Write two different functions to do this - one using a loop and constructing a list, and another using sets.
+# 2. Go back and do Exercise 5 using sets, and write the solution for that in a different function.
+
+def remove_duplicates(list_input):
+    new_list = []
+
+    for i in list_input:
+        if i not in new_list:
+            new_list.append(i)
+    return new_list
+
+
+def remove_duplicates2(list_input):
+    return list(set(list_input))
+
+
+dummy_list = [2, 3, 4, 2, 7, 29, 32, 93, 12, 21, 7, 3, 32, 5, 5]
+
+print("Using functions", remove_duplicates(dummy_list))
+print("Using Set", remove_duplicates2(dummy_list))
