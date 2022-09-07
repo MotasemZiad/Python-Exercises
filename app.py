@@ -295,20 +295,44 @@
 # 1. Write two different functions to do this - one using a loop and constructing a list, and another using sets.
 # 2. Go back and do Exercise 5 using sets, and write the solution for that in a different function.
 
-def remove_duplicates(list_input):
-    new_list = []
+# def remove_duplicates(list_input):
+#     new_list = []
 
-    for i in list_input:
-        if i not in new_list:
-            new_list.append(i)
-    return new_list
-
-
-def remove_duplicates2(list_input):
-    return list(set(list_input))
+#     for i in list_input:
+#         if i not in new_list:
+#             new_list.append(i)
+#     return new_list
 
 
-dummy_list = [2, 3, 4, 2, 7, 29, 32, 93, 12, 21, 7, 3, 32, 5, 5]
+# def remove_duplicates2(list_input):
+#     return list(set(list_input))
 
-print("Using functions", remove_duplicates(dummy_list))
-print("Using Set", remove_duplicates2(dummy_list))
+
+# dummy_list = [2, 3, 4, 2, 7, 29, 32, 93, 12, 21, 7, 3, 32, 5, 5]
+
+# print("Using functions", remove_duplicates(dummy_list))
+# print("Using Set", remove_duplicates2(dummy_list))
+
+
+# Exercise 15:
+# Write a program (using functions!) that asks the user for a long string containing multiple words.
+# Print back to the user the same string, except with the words in backwards order.
+
+# For example, say I type the string:
+# My name is Michele
+# Then I would see the string:
+# Michele is name My
+
+def reverse_order(text_input):
+    return ' '.join(i for i in text_input.split(" ")[::-1])
+    # words = text_input.split(" ")
+    # return ' '.join([i for i in words[::-1]])
+
+
+while True:
+    text_input = input(
+        "Write any sentence to display it backwards: (type exit to end)\n")
+
+    if(text_input.lower() == 'exit'):
+        break
+    print(reverse_order(text_input))
