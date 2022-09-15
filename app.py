@@ -345,3 +345,45 @@
 
 # Extra:
 # Ask the user how strong they want their password to be. For weak passwords, pick a word or two from a list.
+
+import random
+import string
+
+# def generate_password(strength, length) -> str:
+#     letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+#     numbers = "0123456789"
+#     symbols = "!@#$%^*?<>;"
+
+#     generated_password = ''
+
+#     if strength.lower() == "weak":
+#         generated_password = random.sample(letters, length)
+#     elif strength.lower() == "normal":
+#         generated_password = random.sample((letters + numbers), length)
+#     elif strength.lower() == "strong":
+#         generated_password = random.sample(
+#             (letters + numbers + symbols), length)
+
+#     return "".join(generated_password)
+
+
+# print("Password Generator")
+# while True:
+#     strength_input = input(
+#         "Enter the strength of your password (Weak, Normal, Strong): (type exit to end)\n").strip()
+#     if strength_input.lower() == "exit":
+#         break
+#     length_input = int(
+#         input("Enter the length of your password: (-1 to exit)\n"))
+#     if length_input == -1:
+#         break
+
+#     print("Your generated password is:",
+#           generate_password(strength_input, length_input))
+
+
+def password_generator(size=8, characters=string.ascii_letters + string.digits + string.punctuation):
+    return ''.join(random.choices(characters, k=size))
+
+
+print(password_generator(int(input("How many characters in your password? \n"))))
