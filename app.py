@@ -382,8 +382,12 @@ import string
 #           generate_password(strength_input, length_input))
 
 
-def password_generator(size=8, characters=string.ascii_letters + string.digits + string.punctuation):
-    return ''.join(random.choices(characters, k=size))
+# def password_generator(size=8, characters=string.ascii_letters + string.digits + string.punctuation):
+#     return ''.join(random.choices(characters, k=size))
 
 
-print(password_generator(int(input("How many characters in your password? \n"))))
+# print(password_generator(int(input("How many characters in your password? \n"))))
+
+# Exercise 17:
+# Use the BeautifulSoup and requests Python packages to print out a list
+# of all the article titles on the New York Times homepage.
