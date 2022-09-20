@@ -346,8 +346,8 @@
 # Extra:
 # Ask the user how strong they want their password to be. For weak passwords, pick a word or two from a list.
 
-import random
-import string
+# import random
+# import string
 
 # def generate_password(strength, length) -> str:
 #     letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -391,3 +391,31 @@ import string
 # Exercise 17:
 # Use the BeautifulSoup and requests Python packages to print out a list
 # of all the article titles on the New York Times homepage.
+
+# Coming soon...
+
+
+# Exercise 18:
+# Create a program that will play the “cows and bulls” game with the user. The game works like this:
+# Randomly generate a 4-digit number. Ask the user to guess a 4-digit number.
+# For every digit that the user guessed correctly in the correct place, they have a “cow”.
+# For every digit the user guessed correctly in the wrong place is a “bull.” Every time the user makes a guess,
+# tell them how many “cows” and “bulls” they have. Once the user guesses the correct number, the game is over.
+# Keep track of the number of guesses the user makes throughout teh game and tell the user at the end.
+
+
+import random
+
+print("{ Welcome to the Cows and Bulls game }")
+random_number = "".join([str(i) for i in random.sample(range(0, 10,), 4)])
+while True:
+    num_input = input("Enter a 4-digit number: (-1 to exit)\n")
+
+    if(num_input == '-1'):
+        break
+
+    if len(num_input) == 4:
+        print("The game logic goes here")
+    else:
+        print("Please enter a 4-digit number!")
+        continue
