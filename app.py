@@ -406,16 +406,37 @@
 
 import random
 
-print("{ Welcome to the Cows and Bulls game }")
-random_number = "".join([str(i) for i in random.sample(range(0, 10,), 4)])
-while True:
-    num_input = input("Enter a 4-digit number: (-1 to exit)\n")
+if __name__ == "__main__":
 
-    if(num_input == '-1'):
-        break
+    print("{ Welcome to the Cows and Bulls game }")
+    random_number = "".join([str(i) for i in random.sample(range(0, 10,), 4)])
 
-    if len(num_input) == 4:
-        print("The game logic goes here")
-    else:
-        print("Please enter a 4-digit number!")
-        continue
+    cows = 0
+    bulls = 0
+    while True:
+        num_input = input("Enter a 4-digit number: (-1 to exit)\n")
+
+        if(num_input == '-1'):
+            break
+
+        print(random_number)
+        if num_input == random_number:
+            print(f"Four cows! You won...")
+            break
+
+        if len(num_input) == 4:
+            for i in random_number:
+                for j in num_input:
+                    if i == j and random_number.index(i) == num_input.index(j):
+                        cows += 1
+                    elif i == j and not random_number.index(i) == num_input.index(j):
+                        bulls += 1
+
+            if cows > 1 or bulls > 1:
+                print(f"{cows} cows, {bulls} bulls.")
+            else:
+                print(f"{cows} cow, {bulls} bull.")
+
+        else:
+            print("Please enter a 4-digit number!")
+            continue
